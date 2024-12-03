@@ -13,7 +13,7 @@ Approach:
     4. In the recursive tree what result we have got from the left transition and the right transition will sum it up and return the answer.
 
 
-Note:
+Note: Below a sample of the recursive iteration.
 
 countPaths(0, 0)
   ├── countPaths(1, 0)

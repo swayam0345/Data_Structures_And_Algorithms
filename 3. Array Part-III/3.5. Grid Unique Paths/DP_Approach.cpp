@@ -8,7 +8,7 @@ Intuition:
     • This is the main intuition behind this dynamic programming solution.
 
 Approach: 
-    1. Take a dummy matrix A[ ][ ]  of size m X n and initialize it with '-1'. 
+    1. Take a dummy matrix A[ ][ ]  of size m X n and initialize it with '-1'.
     2. At first, we are at the (0,0) index let’s assume this state as (i,j). From here we can move towards the bottom
        as well as towards the right and we recursively move until we hit the base case.
     3. At any point of time when the recursive call goes out of the boundary (example: let’s assume m = 2, n= 3, and the
@@ -17,7 +17,7 @@ Approach:
     4. Whenever the recursive call reaches the end we’ll return 1 because we have found one possible path to reach the end.
     5. The only change in the dynamic programming solution is whenever we are returning answers we store them in the matrix
        A[i][j] and wherever we are making a recursive call we simply check if that state is already visited or not in other
-       words we’ll check if A[i][j] is -1 or not if it is not -1 that means that there is a subproblem which is repeating.
+       words we’ll check if A[i][j] is `-1` or not, if it is not `-1` that means that there is a subproblem which is repeating.
        Now instead of recomputing the subproblem, we’ll return the value at A[i][j].
 
 Complexity Analysis:
@@ -34,7 +34,7 @@ using namespace std;
 class Solution {
 public:
     /* Running countPaths manually will give a better understanding of it's recursvie nature. */
-    int countPaths(int i,int j,int n,int m,vector<vector<int>> &dp)
+    int countPaths(int i, int j, int n, int m,vector<vector<int>> &dp)
     {
         if(i == (n-1) && j == (m-1))
             return 1;
@@ -48,6 +48,7 @@ public:
         else
             return dp[i][j] = countPaths(i+1, j, n, m, dp) + countPaths(i, j+1, n, m, dp);
     }
+
     int uniquePaths(int m, int n)
     {
         //Initialize the storage vector with -1.
@@ -63,6 +64,7 @@ public:
         return dp[0][0];
     }
 };
+
 int main()
 {
     Solution obj;

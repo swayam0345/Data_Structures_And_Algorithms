@@ -1,34 +1,34 @@
 /*
-Algorithm/Intuition:
-    If we flatten the given 2D matrix to a 1D array, the 1D array will also be sorted. By utilizing binary search on this sorted
-    1D array to locate the ‘target’ element, we can further decrease the time complexity. The flattening will be like the following:
+Intuition:
+    ● If we flatten the given 2D matrix to a 1D array, the 1D array will also be sorted. By utilizing binary search on this sorted
+    ● 1D array to locate the ‘target’ element, we can further decrease the time complexity. The flattening will be like the following:
+        ------------------------
+        | 3  |  4  |  7  |  9  |
+        | 12 |  13 |  16 |  18 |
+        | 20 |  21 |  23 |  29 |  __________  Flattening the 2D array to 1D
+        ------------------------           |   ________________________________________________________
+                                            ↪ ┃_3_┃_4_|_7_┃_9_┃_12_┃_13_┃_16_┃_18_┃_20_┃_21_┃_23_┃_29_┃
 
-    ---------------------
-    | 3    4    7    9  |
-    | 12   13   16   18 |
-    | 20   21   23   29 |  __________  Flattening the 2D array to 1D
-    ---------------------           |  ________________________________________________________
-                                    ↪ ┃ 3 ┃ 4 ┃ 7 ┃ 9 ┃ 12 ┃ 13 ┃ 16 ┃ 18 ┃ 20 ┃ 21 ┃ 23 ┃ 29 ┃
-                                       ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+    ● But if we really try to flatten the 2D matrix, it will take O(N x M) time complexity and extra space to store the 1D array.
+      In that case, it will not be the optimal solution anymore.
 
-    But if we really try to flatten the 2D matrix, it will take O(N x M) time complexity and extra space to store the 1D array.
-    In that case, it will not be the optimal solution anymore.
+How to apply binary search on the 1D array without actually flattening the 2D matrix:
+    ● If we can figure out how to convert the index of the 1D array into the corresponding cell number in the 2D matrix,
+      our task will be complete.
+    ● In this scenario, we will use the binary search with the indices of the imaginary 1D array, ranging from 0 to (NxM)-1
+      (total no. of elements in the 1D array = NxM).
+    ● When comparing elements, we will convert the index to the cell number and retrieve the element.
+    ● Thus we can apply binary search in the imaginary 1D array.
 
-    How to apply binary search on the 1D array without actually flattening the 2D matrix:
-        If we can figure out how to convert the index of the 1D array into the corresponding cell number in the 2D matrix,
-        our task will be complete. In this scenario, we will use the binary search with the indices of the imaginary 1D array,
-        ranging from 0 to (NxM)-1(total no. of elements in the 1D array = NxM). When comparing elements, we will convert the
-        index to the cell number and retrieve the element. Thus we can apply binary search in the imaginary 1D array.
-
-    How to convert 1D array index to the corresponding cell of the 2D matrix:
-        If index = i, and no. of columns in the matrix = m, the index i corresponds to the cell with
-        row = i / m and col = i % m. More formally, the cell is (i / m, i % m)(0-based indexing).
+How to convert 1D array index to the corresponding cell of the 2D matrix:
+    ● If index = i, and no. of columns in the matrix = m, the index i corresponds to the cell with
+        row = i/m and col = i%m. More formally, the cell is [(i/m), (i%m)] (0-based indexing).
 
         Ex; Index '5' in 1D array corresponds to cell(1, 1) in 2D matrix.
             row = (5 / 4) = 1 (Integer division)
             column = (5 % 4) = 1
 
-    The range of the indices of the imaginary 1D array is [0, (NxM)-1] and in this range, we will apply binary search.
+    ● The range of the indices of the imaginary 1D array is [0, (NxM)-1] and in this range, we will apply binary search.
 
 Approach:
     1. Place the 2 pointers i.e. low and high & the pointer low will point to 0 and the high will point to (NxM)-1.

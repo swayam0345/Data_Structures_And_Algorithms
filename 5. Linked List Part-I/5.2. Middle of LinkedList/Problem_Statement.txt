@@ -1,0 +1,17 @@
+Given the head of a linked list of integers, determine the middle node of the linked list.
+However, if the linked list has an even number of nodes, return the second middle node.
+
+
+Example 1:                    
+Input:  Linked list -   ______________      ______________      ______________      ______________      ______________
+                        |__1__|_next_| ---> |__2__|_next_| ---> |__3__|_next_| ---> |__4__|_next_| ---> |__5__|_next_| ---> NULL
+Output: 3
+Explanation: Node with value 3 is the middle node of this linked list.
+
+
+Example 2:
+Input: LL: 1  2  3  4  5  6
+Input:  Linked list -   _________      _________      _________      _________      _________      _________
+                        |_1_|_n_| ---> |_2_|_n_| ---> |_3_|_n_| ---> |_4_|_n_| ---> |_5_|_n_| ---> |_6_|_n_| ---> NULL
+Output: 4
+Explanation:  In this example, the linked list has an even number of nodes hence we return the second middle node which is 4.

@@ -1,0 +1,21 @@
+Given the head of a singly linked list, reverse the list, and return the reversed list.
+
+
+Example 1:
+Input: Linked List = [1, 2, 3, 4, 5]
+Output: [5, 4, 3, 2, 1]
+Explanation:    __________      __________      __________      __________      __________
+                |_1_|____| ---> |_2_|____| ---> |_3_|____| ---> |_4_|____| ---> |_5_|____| ---> NULL
+                head
+                __________      __________      __________      __________      __________
+                |_5_|____| ---> |_4_|____| ---> |_3_|____| ---> |_2_|____| ---> |_1_|____| ---> NULL
+                head
+
+Example 2:
+Input: Linked List = [1, 2]
+Output: [2, 1]
+
+
+Example 3:
+Input: head = []
+Output: []

@@ -1,0 +1,24 @@
+We are given two non-empty linked lists representing two non-negative integers.
+The digits are stored in reverse order, and each of their nodes contains a single digit.
+Add the two numbers and return the sum as a linked list.
+
+We may assume the two numbers do not contain any leading zero, except the number 0 itself.
+
+ 
+Example 1:
+Input: list1 = [2, 4, 3] and list2 = [5, 6, 4]
+Output: [7, 0, 8]
+Explanation: Since the digits are stored in reverse order, reverse the numbers first
+             to get the original number and then add them as → 342 + 465 = 807.
+
+
+Example 2:
+Input: list1 = [0] and list2 = [0]
+Output: [0]
+
+
+Example 3:
+Input: list1 = [9, 9, 9, 9, 9, 9, 9] and list2 = [9, 9, 9, 9]
+Output: [8, 9, 9, 9, 0, 0, 0, 1]
+Explanation: Since the digits are stored in reverse order, reverse the numbers first to get the original
+             number and then add them as → 9999999 + 9999 = 8999001. Refer to the image below.

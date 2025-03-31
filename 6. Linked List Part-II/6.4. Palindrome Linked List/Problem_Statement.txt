@@ -1,0 +1,27 @@
+Check if the given Linked List is a Palindrome.
+
+A palindrome is a word, verse, or sentence (such as "Able was I ere I saw Elba")
+or a number (such as 1881) that reads the same backward or forward.
+
+
+Example 1:
+Input Format:
+    LL: 1 -> 2 -> 3 -> 2 -> 1
+Output: True
+Explanation: A linked list with values "1 2 3 2 1" is a palindrome because its elements read the same
+            from left to right and from right to left, making it symmetrical and mirroring itself.
+
+
+Example 2:
+Input Format:
+    LL: 1 -> 2 -> 3 -> 3 -> 2 -> 1
+Output: True
+Explanation: A linked list with values "1 2 3 3 2 1" is a palindrome because it reads the same forwards and backwards.
+
+
+Example 3:
+Input Format:
+    LL: 1 -> 2 -> 3 -> 2 -> 3
+Output: False
+Explanation: The linked list "1 2 3 2 3" is not a palindrome because it reads differently in reverse order,
+            where "3 2 3 2 1" is not the same as the original sequence "1 2 3 2 3."

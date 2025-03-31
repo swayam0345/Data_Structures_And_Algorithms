@@ -1,0 +1,26 @@
+Given the head of a linked list that may contain a cycle, return the starting point of that cycle.
+If there is no cycle in the linked list return null.
+
+
+Example 1:
+Input:
+    Linked List - 1 -> 2 -> 3 -> 4 -> 5
+                                            _______
+                                 ←--------- |__5__|
+                                 |             ↑
+    _______      _______      ___↓___          |
+    |__1__| ---> |__2__| ---> |__3__|          |
+                                 |          ___|___
+                                 ↓--------→ |__4__|
+Output: 3
+Explanation: This linked list contains a loop of size 3 starting at node with value 3.
+
+
+Example 2:
+Input Format:
+    Linked List - 1 -> 2 -> 3 -> 4 -> 9 -> 9
+    _______      _______      _______      _______      _______      _______
+    |__1__| ---> |__2__| ---> |__3__| ---> |__4__| ---> |__9__| ---> |__9__|
+
+Output: NULL
+Explanation: This linked list does not contain a loop hence has no starting point. 

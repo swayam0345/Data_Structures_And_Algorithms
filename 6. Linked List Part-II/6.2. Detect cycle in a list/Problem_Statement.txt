@@ -1,0 +1,38 @@
+There's a cycle in a linked list if there is some node in the list that can be reached
+again by continuously following the `next` pointer.
+
+Return true if there is a cycle in the linked list. Otherwise, return false.
+
+
+Example 1:
+Input Format:
+    Linked List - 1 -> 2 -> 3 -> 4 -> 5     _______
+                                 ←--------- |__5__|
+    _______      _______      ___↓___          ↑
+    |__1__| ---> |__2__| ---> |__3__|          |
+                                 |             |
+                                 |          ___|___
+                                 ↓--------→ |__4__|
+Output: True
+Explanation: The last node with the value of 5 has its 'next' pointer pointing back to a previous node with the value of 3.
+             This has resulted in a loop, hence we return `True`.
+
+
+Example 2:
+Input Format:
+    Linked List - 1 -> 2 -> 3 -> 4 -> 9 -> 9
+    _______      _______      _______      _______      _______      _______
+    |__1__| ---> |__2__| ---> |__3__| ---> |__4__| ---> |__9__| ---> |__9__|
+
+Output: false
+Explanation: In this example, the linked list does not have a loop hence returns `False`.
+
+
+Example 3:
+Input Format:
+    Linked List - 3 -> 2 -> 0 -> -4
+    _______      _______      _______      ________
+    |__3__| ---> |__2__| ---> |__0__| ---> |__-4__|
+                    ↑__________________________|
+Output: True
+Explanation: There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).

@@ -101,6 +101,21 @@ void printLL(Node *head)
     cout << "]";
 }
 
+Node *reverseLinkedList(Node *head)
+{
+    Node *temp = head;
+    Node *prev = NULL;
+
+    while (temp != NULL)
+    {
+        Node *front = temp->next;
+        temp->next = prev;
+        prev = temp;
+        temp = front;
+    }
+
+    return prev;
+}
 
 Node* sumOfTwoLinkedList(Node* list1, Node* list2)
 {
@@ -146,13 +161,13 @@ int main()
 {
     /* Second Sample Input */
 /*
-    Node *list1 = new Node(2);
-    list1->next = new Node(4);
-    list1->next->next = new Node(9);
+    Node *list1 = new Node(1);
+    list1->next = new Node(2);
+    list1->next->next = new Node(3);
 
     Node *list2 = new Node(5);
-    list2->next = new Node(6);
-    list2->next->next = new Node(4);
+    list2->next = new Node(8);
+    list2->next->next = new Node(9);
 */
 
     /* Second Sample Input */
@@ -175,9 +190,14 @@ int main()
     printLL(list2);
     cout << endl << "\t" << "-------------------" << endl;
 
-    Node* resultList = sumOfTwoLinkedList(list1, list2);
+    /* Reverse both the list before adding them */
+    Node *revList1 = reverseLinkedList(list1);
+    Node *revList2 = reverseLinkedList(list2);
+
+    Node* resultList = sumOfTwoLinkedList(revList1, revList2);
     /* Print the output sum linked list. */
-    printLL(resultList);
+    Node *revResult = reverseLinkedList(resultList);
+    printLL(revResult);
 
     return 0;
 }
